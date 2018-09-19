@@ -7,10 +7,16 @@ body {
   margin: 0;
 }
 
+main {
+  min-height: calc(100vh - 3.5rem - 8rem);
+  margin-top: 3.5rem;
+}
+
 .backdrop {
   position: fixed;
   display: none;
   top: 0;
+  left: 0;
   z-index: 100;
   width: 100vw;
   height: 100vh;
@@ -56,23 +62,21 @@ body {
 
 .main-header__brand {
   color: #0e4f1f;
-  vertical-align: middle;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.5rem;
-  height: 1.5rem;
+  height: 2.5rem;
+  /* width: 20px; */
   display: inline-block;
+  vertical-align: middle;
 }
 
 .main-header__brand img {
   height: 100%;
+  /* width: 100%; */
 }
 
 .main-nav {
-  display: inline-block;
-  text-align: right;
-  width: calc(100% - 122px);
-  vertical-align: middle;
+  display: none;
 }
 
 .main-nav__items {
@@ -94,8 +98,8 @@ body {
   padding: 0.2rem 0;
 }
 
-.main-nav__item > a:hover,
-.main-nav__item > a:active {
+.main-nav__item a:hover,
+.main-nav__item a:active {
   color: white;
   border-bottom: 5px solid white;
 }
@@ -108,13 +112,26 @@ body {
   border-radius: 8px;
 }
 
-.main-nav__item--cta > a:hover,
-.main-nav__item--cta > a:active,
-.mobile-nav__item--cta > a:hover,
-.mobile-nav__item--cta > a:active {
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active,
+.mobile-nav__item--cta a:hover,
+.mobile-nav__item--cta a:active {
   color: #ff1b68;
   background: white;
   border: none;
+}
+
+@media (min-width: 40rem) {
+  .toggle-button {
+    display: none;
+  }
+
+  .main-nav {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 44px);
+    vertical-align: middle;
+  }
 }
 
 .main-footer {
@@ -125,14 +142,14 @@ body {
 
 .main-footer__links {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   text-align: center;
 }
 
 .main-footer__link {
-  display: inline-block;
-  margin: 0 1rem;
+  display: block;
+  margin: 1rem 0;
 }
 
 .main-footer__link a {
@@ -196,4 +213,11 @@ body {
 
 .open {
   display: block !important;
+}
+
+@media (min-width: 40rem) {
+  .main-footer__link {
+    display: inline-block;
+    margin: 0 1rem;
+  }
 }
