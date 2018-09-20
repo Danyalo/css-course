@@ -64,6 +64,13 @@ main {
   border: #0e4f1f;
 }
 
+.signup-form input.invalid,
+.signup-form select.invalid,
+.signup-form :invalid {
+  border: 1px solid red !important;
+  background: rgb(224, 108, 108);
+}
+
 @media (min-width: 40rem) {
   .signup-form {
     margin: auto;
